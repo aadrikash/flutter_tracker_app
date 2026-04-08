@@ -10,6 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # GPS / location
+  geolocator: ^13.0.2
+  # Reverse geocoding (city name from coordinates)
+  geocoding: ^3.0.0
+  # AR / 3-D model viewer (uses Google Scene Viewer on Android for true AR)
+  model_viewer_plus: ^1.7.2
 
 dev_dependencies:
   flutter_test:

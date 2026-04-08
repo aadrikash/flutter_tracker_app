@@ -47,5 +47,10 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- Location permission descriptions required by geolocator on iOS -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses your location to show where you are on the Home screen.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app uses your location to show where you are on the Home screen.</string>
 </dict>
 </plist>
