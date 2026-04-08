@@ -6,7 +6,10 @@ import '../widgets/summary_card.dart';
 import '../widgets/transaction_tile.dart';
 import '../widgets/analytics_card.dart';
 import '../widgets/pie_chart_widget.dart';
+import '../widgets/location_card.dart';
 import 'add_transaction_screen.dart';
+import 'chatbot_screen.dart';
+import 'ar_screen.dart';
 import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -68,6 +71,30 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Expense Dashboard"),
         centerTitle: true,
         elevation: 0,
+        actions: [
+          // 🔷 AR Experience entry point
+          IconButton(
+            icon: const Icon(Icons.view_in_ar),
+            tooltip: 'View in AR',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ARScreen()),
+              );
+            },
+          ),
+          // 💬 Chatbot entry point
+          IconButton(
+            icon: const Icon(Icons.chat_bubble_outline),
+            tooltip: 'Chat Assistant',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ChatbotScreen()),
+              );
+            },
+          ),
+        ],
       ),
 
       // 🔹 Drawer
@@ -119,6 +146,11 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // 💰 Summary Card
             SummaryCard(income: income, expense: expense),
+
+            SizedBox(height: 10),
+
+            // 📍 GPS Location Card (Feature 1)
+            const LocationCard(),
 
             SizedBox(height: 10),
 
